@@ -21,36 +21,42 @@ import { BuscarViajeComponent } from '../usuarios/buscar-viaje/buscar-viaje.comp
   styleUrl: './administrador.component.css'
 })
 
-export class AdministradorComponent implements OnInit {
- administrador : Administrador = new Administrador;
- validacion: boolean = true;
- constructor() { }
+export class AdministradorComponent implements OnInit{
+ administrador : Administrador;
+ validacion: boolean;
+
+constructor() {
+  this.validacion = true;
+  this.administrador = new Administrador;
+ }
 
   ngOnInit(): void {
-    this.MostrarLogin();
-    this.MostrarRestoPagina();
-    this.ValidacionSesion();
-  }
-  MostrarLogin(){
-    const modal = document.getElementById("logIn")
-    if (modal!= null) 
-    modal.style.display="block";
-  }
-  MostrarRestoPagina(){
-    const modal = document.getElementById("indexAdm")
-    if (modal!= null) 
-    modal.style.display="none";
+    this.mostrarElementos();
+    this.MostrarAdm();
   }
 
-  ValidacionSesion(){
+  mostrarElementos(){
     if(this.validacion == true){
     const modal = document.getElementById("indexAdm")
-    if (modal!= null) 
-    modal.style.display="block";
+      if (modal!= null) 
+      modal.style.display="block";
 
-    const modal2 = document.getElementById("logIn")
-    if (modal2!= null) 
-    modal2.style.display="none";
+      const modal2 = document.getElementById("logIn")
+      if (modal2!= null) 
+      modal2.style.display="none";
+    }
+  }
+
+  MostrarAdm(){
+    if(this.validacion != true){
+      
+      const modal = document.getElementById("indexAdm")
+      if (modal!= null) 
+      modal.style.display="none";
+
+      const modal2 = document.getElementById("logIn")
+      if (modal2!= null) 
+      modal2.style.display="block";
     }
   }
 

@@ -11,7 +11,7 @@ export class ListaPorDiaComponent implements OnInit{
 
  
   ngOnInit(): void {
-    this.EstadoPredeterminado();
+    //this.EstadoPredeterminado();
     
   }
 

@@ -8,23 +8,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrarFormulario()"></button>
         </div>
         <div class="modal-body">
-          <p>Seleccione el destino al que desea viajar</p>
+          <p>Ingrese el destino al que desea viajar</p>
         </div>
         <div class="modal-footer">
             <div class = container>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecciona el destino al que deseas ir</option>
-                    <option value="1">Barranquilla</option>
-                    <option value="2">Bogotá</option>
-                    <option value="3">Medellin</option>
-                    <option value="4">Cali</option>
-                    <option value="5">Cucuta</option>
-                    <option value="6">Ibague</option>
-                  </select>
-                <select class = "form-select" aria-label="Default select example">
-                  <option selected>Seleccione la fecha</option>
-                  <option value = "1">02-03-2024</option>
-                </select>
+              <form>
+              <div class="mb-3">
+                <input for="inputDestino" type="text"  class="form-control">
+              </div>
+              </form>
+                  <br>
                 <app-viajes></app-viajes>
             </div>
         </div>
