@@ -9,17 +9,74 @@
         </div>
         <div class="modal-body">
           <p>Ingrese el destino al que desea viajar</p>
+          <form>
+            <div class="mb-3">
+              <input for="inputDestino" type="text"  class="form-control" [(ngModel)]="destino" name="destino">
+            </div>
+            </form>
+            <div class = container>
+              <button type="button" class="btn btn-primary" (click)="mostrarViajes(destino)">Buscar</button>
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th scope="col">Destino</th>
+                          <th scope="col">Fecha</th>
+                          <th scope="col">Hora</th>
+                          <th scope="col">Bus</th>
+                          <th scope="col">Valor</th>
+                          <th scope="col">Opción</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of viajes">
+                      <td>{{item.destino}}</td>
+                          <td>{{item.fecha}}</td>
+                          <td>{{item.hora}}</td>
+                          <td>{{item.id_bus.matricula}}</td>
+                          <td>{{item.precio}}</td>
+                          <td><button type="button" class="btn btn-primary" (click)="AbrirFomularioUsuario()">Seleccionar</button><</td>
+                  </tr>
+              </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" tabindex="-1" id="formulario-clientes">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Datos de cliente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrarFormularioUsuario()"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingrese su información para realizar su reserva</p>
+          <form>
+            <div class="mb-3">
+              <label  class="form-label">Cedula</label>
+              <input for="inputCedula" type="text"  class="form-control" [(ngModel)]="cliente.cedula">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nombre </label>
+              <input for="inputNombre" type="text" class="form-control" [(ngModel)]="cliente.nombre" >
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Apellido</label>
+              <input for="inputApellido" type="text" class="form-control" [(ngModel)]="cliente.apellido">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Telefono</label>
+              <input for="inputTelefono" type="text" class="form-control" [(ngModel)]="cliente.telefono">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Fecha de Nacimiento</label>
+              <input for="inputFechadeNacimiento" type="text" class="form-control" [(ngModel)]="cliente.fecha_nacimiento">
+            </div>
+        </form>
         </div>
         <div class="modal-footer">
-            <div class = container>
-              <form>
-              <div class="mb-3">
-                <input for="inputDestino" type="text"  class="form-control">
-              </div>
-              </form>
-                  <br>
-                <app-viajes></app-viajes>
-            </div>
+          <button type="button" class="btn btn-primary">Confirmar reserva</button>
         </div>
       </div>
     </div>
