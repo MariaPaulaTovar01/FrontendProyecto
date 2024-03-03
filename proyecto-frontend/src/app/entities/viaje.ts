@@ -1,8 +1,11 @@
+
+import { Bus } from "./bus";
+
 export class Viaje {
-    id_viaje : string;
-    id_bus : string;
+    id_viaje : number;
+    id_bus : Bus;
     destino: string;
-    hora: string;
-    fecha: string;
-    precio: string;
+    hora: Date;
+    fecha: Date;
+    precio: number;
 }

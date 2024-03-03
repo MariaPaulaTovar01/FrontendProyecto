@@ -11,15 +11,6 @@ import { ViajesComponent } from '../viajes.component';
 })
 export class FormularioUsuariosComponent {
 
-  AbrirFomulario(){
-    const modal = document.getElementById("formulario-clientes")
-    if (modal!= null) 
-    modal.style.display="block";
-  }
-  cerrarFormulario(){
-    const modal = document.getElementById("formulario-clientes")
-    if (modal!= null) 
-    modal.style.display="none";
-  }
+ 
 
 }

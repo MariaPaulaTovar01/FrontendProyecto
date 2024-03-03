@@ -9,6 +9,7 @@ import { ViajesComponent } from './viajes/viajes.component';
 import { FormularioUsuariosComponent } from './viajes/formulario-usuarios/formulario-usuarios.component';
 import { ListaPorDiaComponent } from './administrador/lista-por-dia/lista-por-dia.component';
 import { ListaPorBusComponent } from './administrador/lista-por-bus/lista-por-bus.component';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -22,7 +23,9 @@ import { ListaPorBusComponent } from './administrador/lista-por-bus/lista-por-bu
     ConsultarReservaComponent,
     FormularioUsuariosComponent,
     ListaPorDiaComponent,
-    ListaPorBusComponent],
+    ListaPorBusComponent,
+    ViajesComponent,
+    FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
