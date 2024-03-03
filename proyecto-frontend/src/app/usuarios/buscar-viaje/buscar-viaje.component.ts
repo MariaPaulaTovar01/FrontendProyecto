@@ -7,6 +7,7 @@ import { Viaje } from '../../entities/viaje';
 import { error } from 'console';
 import { CommonModule } from '@angular/common';
 import { Cliente } from '../../entities/cliente';
+import { Reserva } from '../../entities/reserva';
 
 @Component({
   selector: 'app-buscar-viaje',
@@ -18,6 +19,7 @@ import { Cliente } from '../../entities/cliente';
 export class BuscarViajeComponent implements OnInit{
   destino: string;
   viajes: Viaje[];
+  reservas: Reserva[];
   cliente : Cliente = new Cliente;
   ngOnInit(): void {
  
@@ -54,5 +56,19 @@ export class BuscarViajeComponent implements OnInit{
     this.usuariosservicio.BuscarDestino(destino).subscribe(dato =>{
       this.viajes = dato;
     });
+  }
+ 
+  guardarDatosPasajero(){
+    this.usuariosservicio.GuardarDatosCliente(this.cliente).subscribe((dato : Object)=>{
+       console.log(dato);
+       if(dato != null)
+       alert("guardado");
+      this.cerrarFormularioUsuario();
+      
+    })
+  }
+  guardarReserva(){
+    this.guardarDatosPasajero();
+
   }
 }

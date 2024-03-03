@@ -55,28 +55,28 @@
           <form>
             <div class="mb-3">
               <label  class="form-label">Cedula</label>
-              <input for="inputCedula" type="text"  class="form-control" [(ngModel)]="cliente.cedula">
+              <input for="inputCedula" type="number"  class="form-control" name ="cedula"[(ngModel)]="cliente.cedula">
             </div>
             <div class="mb-3">
               <label class="form-label">Nombre </label>
-              <input for="inputNombre" type="text" class="form-control" [(ngModel)]="cliente.nombre" >
+              <input for="inputNombre" type="text" class="form-control" name = "nombre"[(ngModel)]="cliente.nombre" >
             </div>
             <div class="mb-3">
               <label class="form-label">Apellido</label>
-              <input for="inputApellido" type="text" class="form-control" [(ngModel)]="cliente.apellido">
+              <input for="inputApellido" type="text" class="form-control" name ="apellido"[(ngModel)]="cliente.apellido">
             </div>
             <div class="mb-3">
               <label class="form-label">Telefono</label>
-              <input for="inputTelefono" type="text" class="form-control" [(ngModel)]="cliente.telefono">
+              <input for="inputTelefono" type="number" class="form-control" name ="telefono" [(ngModel)]="cliente.telefono">
             </div>
             <div class="mb-3">
               <label class="form-label">Fecha de Nacimiento</label>
-              <input for="inputFechadeNacimiento" type="text" class="form-control" [(ngModel)]="cliente.fecha_nacimiento">
+              <input for="inputFechadeNacimiento" type="date" class="form-control" name="fechaDeNacimiento" [(ngModel)]="cliente.fecha_nacimiento">
             </div>
         </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Confirmar reserva</button>
+          <button type="button" class="btn btn-primary" (click)="guardarDatosPasajero()">Confirmar reserva</button>
         </div>
       </div>
     </div>
